@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Driving Simulator Prototype | Development</title>
+  <meta name="description" content="Behind-the-scenes development journey for the driving simulator prototype project.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">⟲</span>
+        <span class="brand-text">Driving Simulator Prototype</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="project.html">Project</a>
+        <a class="nav-link is-active" href="development.html">Development</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Development Page</p>
+        <h1>How we got here</h1>
+        <p class="lead">
+          This page documents the behind-the-scenes path from our first idea to the final scaled-down demo.
+          We kept it honest: what we tried, what failed, and what we learned.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Timeline</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-date">Early semester</div>
+            <div class="timeline-body">
+              <h3>Big-scale brainstorming</h3>
+              <p>
+                We started by exploring full simulator ideas. We looked into methods like linear actuators and other mechanisms that could
+                physically move or resist a steering wheel for force feedback. The concepts were exciting, but we realized the complexity and cost
+                were high for our time and resources.
+              </p>
+              <p class="muted">
+                Decision: prove the core concept on a smaller scale first.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">Mid semester</div>
+            <div class="timeline-body">
+              <h3>Scaling down to a single rotating motor</h3>
+              <p>
+                We simplified: instead of multiple actuators, we aimed for one rotating motor output (clockwise and counterclockwise) that could
+                represent steering direction. This let us iterate quickly and test the idea with basic parts.
+              </p>
+              <figure class="inline-figure">
+                <img src="assets/images/circuit_diagram.jpg" alt="Laptop showing a circuit diagram connecting joystick and motor/servo to an Arduino." loading="lazy">
+                <figcaption>Reference diagram used while testing control wiring.</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">Later</div>
+            <div class="timeline-body">
+              <h3>Servo/joystick attempts (and why they stalled)</h3>
+              <p>
+                We attempted to control rotation using a joystick and experimented with different approaches. After multiple failed attempts,
+                we recognized a key issue: reversing a DC motor isn’t just a software problem—bidirectional control typically needs an H-bridge.
+              </p>
+              <p class="muted">
+                Lesson: matching the component (servo vs DC motor) to the control goal matters as much as code.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">Final weeks</div>
+            <div class="timeline-body">
+              <h3>Final prototype: toy car on a rotating platform</h3>
+              <p>
+                Our final demo mounts a toy model car on a rotating motor platform. The platform visibly turns in both directions as our output.
+                This gives us a clean, testable proof-of-concept that we can improve later with an H-bridge and stronger mechanical coupling to a wheel.
+              </p>
+              <figure class="inline-figure">
+                <img src="assets/images/classroom_prototype.jpg" alt="Prototype on table: Arduino, breadboard wiring, joystick, and servo/motor part nearby." loading="lazy">
+                <figcaption>Final build sessions: wiring + testing + small refinements.</figcaption>
+              </figure>
+            </div>
+          </li>
+        </ol>
+
+        <h2>What we learned</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Prototype small first</h3>
+            <p>
+              Scaling down made progress visible quickly and reduced risk. We could test the idea without building the whole simulator.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Hardware matters</h3>
+            <p>
+              If the goal is bidirectional DC motor motion, you need an H-bridge (or similar driver). Knowing this earlier would’ve saved time.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Iteration beats perfection</h3>
+            <p>
+              Documenting failures helped us converge: each “no” narrowed the path to a working demo.
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <h3>Next iteration plan</h3>
+          <p>
+            Add an H-bridge, tune input mapping for smooth turning, and connect the motor output to an actual steering wheel or gear system to increase torque.
+          </p>
+          <a class="btn" href="project.html">Back to project page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Driving Simulator Prototype.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
