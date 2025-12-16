@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Driving Simulator Prototype | Project</title>
+  <meta name="description" content="Project details, visuals, links, and video for the driving simulator prototype.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">⟲</span>
+        <span class="brand-text">Driving Simulator Prototype</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link is-active" href="project.html">Project</a>
+        <a class="nav-link" href="development.html">Development</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Project Page</p>
+        <h1>Final prototype + evidence</h1>
+        <p class="lead">
+          Our final product is a toy model car mounted on a rotating motor platform. The platform can rotate clockwise and counterclockwise
+          as a controllable output (a scaled-down steering system).
+        </p>
+
+        <div class="pill-row" role="list" aria-label="Project highlights">
+          <span class="pill" role="listitem">Arduino control</span>
+          <span class="pill" role="listitem">Joystick input testing</span>
+          <span class="pill" role="listitem">Bidirectional rotation</span>
+          <span class="pill" role="listitem">Iterative redesign</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Problem statement</h2>
+        <p>
+          Build a driving simulator mechanism that can translate user input into steering motion. We initially considered larger force-feedback
+          mechanisms (like linear actuators), but we prioritized a small, functional prototype that we could iterate on quickly.
+        </p>
+
+        <h2>Solution overview</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Input</h3>
+            <p>
+              A joystick module used for early testing and mapping input to motion. This let us prototype control logic without a full wheel rig.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Controller</h3>
+            <p>
+              Arduino microcontroller to read input signals and generate motor commands.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Output</h3>
+            <p>
+              A rotating motor platform that turns clockwise and counterclockwise. Our toy model car is mounted to make the rotation visible and testable.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <figure class="media-card">
+            <img src="assets/images/setup_arduino.jpg" alt="Arduino setup with breadboard wiring, joystick module, and a servo/motor prototype on a desk." loading="lazy" />
+            <figcaption>Bench test: reading joystick + experimenting with motor motion.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/images/classroom_prototype.jpg" alt="Prototype on a table: Arduino, breadboard wiring, joystick, and a small servo/motor part nearby." loading="lazy" />
+            <figcaption>Classroom prototype: wiring and quick iteration testing.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Key technical lesson</h2>
+        <p>
+          We learned that if you want a <strong>DC motor</strong> to spin both directions, you need direction-control hardware—commonly an <strong>H-bridge</strong>.
+          We tried multiple approaches to make the motor go clockwise and counterclockwise, but without an H-bridge the direction control wasn’t reliable.
+          That realization shaped our final design and documentation.
+        </p>
+
+        <div class="callout">
+          <h3>What we would do next</h3>
+          <p>
+            Integrate an H-bridge and refine the control mapping so the motor direction and speed respond smoothly to input. Then scale from the toy platform
+            to a small steering wheel module with stronger torque.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap">
+        <h2>Project video</h2>
+        <p class="muted">These videos are embedded directly from the repo so they work on GitHub Pages.</p>
+
+        <div class="video-grid">
+          <figure class="video-card">
+            <video controls preload="metadata" poster="assets/posters/IMG_3191.jpg">
+              <source src="assets/videos/IMG_3191.mp4" type="video/mp4" />
+              Sorry—your browser can't play this video.
+            </video>
+            <figcaption>Video 1: Early control and movement test.</figcaption>
+          </figure>
+
+          <figure class="video-card">
+            <video controls preload="metadata" poster="assets/posters/IMG_3192.jpg">
+              <source src="assets/videos/IMG_3192.mp4" type="video/mp4" />
+              Sorry—your browser can't play this video.
+            </video>
+            <figcaption>Video 2: Iteration and wiring adjustments.</figcaption>
+          </figure>
+
+          <figure class="video-card">
+            <video controls preload="metadata" poster="assets/posters/IMG_3570.jpg">
+              <source src="assets/videos/IMG_3570.mp4" type="video/mp4" />
+              Sorry—your browser can't play this video.
+            </video>
+            <figcaption>Video 3: Final demo clip.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="development.html">Read development timeline</a>
+          <a class="btn btn-ghost" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Driving Simulator Prototype.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
