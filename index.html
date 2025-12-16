@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Driving Simulator Prototype | Home</title>
+  <meta name="description" content="Portfolio site for a semester driving simulator prototype project.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">⟲</span>
+        <span class="brand-text">Driving Simulator Prototype</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link is-active" href="index.html">Home</a>
+        <a class="nav-link" href="project.html">Project</a>
+        <a class="nav-link" href="development.html">Development</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Semester Engineering Build</p>
+          <h1>From big ideas to a smaller, working force-feedback prototype.</h1>
+          <p class="lead">
+            We set out to build a driving simulator. Early on, we explored big-scale approaches like linear actuators.
+            As we learned more, we scaled down to a simpler but testable system: a steering wheel mechanism driven by a motor
+            that can rotate both directions. Our final demo mounts a toy model car to a rotating motor platform.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="project.html">See the final build</a>
+            <a class="btn btn-ghost" href="development.html">Read the journey</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-num">1</div>
+              <div class="stat-label">motor platform</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">3</div>
+              <div class="stat-label">iterations</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">∞</div>
+              <div class="stat-label">debugging moments</div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <img
+            src="assets/images/setup_arduino.jpg"
+            alt="Arduino setup with breadboard wiring, joystick module, and a servo/motor prototype on a desk."
+            loading="eager"
+          />
+          <figcaption>
+            Prototype test setup: Arduino + joystick experiments during early steering control trials.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>What we built</h2>
+        <p class="muted">
+          A compact proof-of-concept for steering feedback and control. Instead of a full rig, we focused on getting clean,
+          repeatable motion first—then documenting what worked and what didn’t.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Goal</h3>
+            <p>
+              Create a driving simulator experience by translating joystick inputs into steering motion on a physical wheel or platform.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Shift in approach</h3>
+            <p>
+              We explored linear actuators and other big mechanisms, but moved to a smaller rotating motor design to get faster iteration.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Final demo</h3>
+            <p>
+              A toy model car mounted on a rotating motor platform that turns clockwise and counterclockwise as a controllable steering output.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <figure class="media-card">
+            <img src="assets/images/circuit_diagram.jpg" alt="Laptop showing a circuit diagram connecting a joystick and motor/servo to an Arduino." loading="lazy" />
+            <figcaption>Reference wiring diagram used during control testing.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/images/classroom_prototype.jpg" alt="Prototype on a table: Arduino, breadboard wiring, joystick, and a small servo/motor part nearby." loading="lazy" />
+            <figcaption>In-class build session: wiring + quick tests.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap">
+        <h2>Why it mattered</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Engineering tradeoffs</h3>
+            <p>
+              We learned that “bigger” isn’t always better. Smaller prototypes can prove the core concept sooner and with fewer unknowns.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Motor control reality</h3>
+            <p>
+              Reversing a DC motor reliably requires proper direction control hardware (like an H-bridge), not just code changes.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Documentation</h3>
+            <p>
+              Recording what failed helped us converge faster and made the final outcome easier to explain and defend.
+            </p>
+          </article>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="project.html">Project details + videos</a>
+          <a class="btn btn-ghost" href="about.html">About our team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Driving Simulator Prototype. Built as a static site for GitHub Pages.</p>
+      <p class="muted">Tip: Upload this whole folder to your repo root, then enable GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
